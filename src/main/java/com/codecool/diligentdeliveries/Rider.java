@@ -9,7 +9,6 @@ public class Rider {
 
     public Rider(int id, int reattemptPerAddress, int maximumReattempts){
         this.id = id;
-
     }
 
     public void addParcels(ArrayList<Parcel> parcels){
@@ -21,18 +20,18 @@ public class Rider {
         //Implement
     }
 
-    private boolean reattempt(Parcel parcel)
-    {
-        //Implement
-    }
+//    private boolean reattempt(Parcel parcel)
+//    {
+//        //Implement
+//    }
 
     private void handleSuccessfulDelivery(Parcel parcel)
     {
         //Implement
     }
 
-    public Report getReport()
-    {
-        //Implement
-    }
+//    public Report getReport()
+//    {
+//        //Implement
+//    }
 }

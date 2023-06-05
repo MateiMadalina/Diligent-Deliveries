@@ -1,5 +1,7 @@
 package com.codecool.diligentdeliveries;
 
+import java.util.Arrays;
+
 public class Parcel {
     private final int[] id;
     private final Address address;
@@ -19,5 +21,13 @@ public class Parcel {
 
     public boolean succesfulDeliver(){
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Parcel{" +
+                "id=" + Arrays.toString(id) +
+                ", address=" + address +
+                '}';
     }
 }
