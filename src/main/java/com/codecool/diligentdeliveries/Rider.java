@@ -8,7 +8,8 @@ public class Rider {
     private String name;
 
     public Rider(int id, int reattemptPerAddress, int maximumReattempts){
-        //Initialize members
+        this.id = id;
+
     }
 
     public void addParcels(ArrayList<Parcel> parcels){
