@@ -12,20 +12,11 @@ public class Parcel {
         this.address = address;
     }
 
-    public Address getAddress() {
-        return address;
-    }
 
-    public int[] getId() {
-        return id;
-    }
 
     public boolean succesfulDeliver(){
         Random random = new Random();
-        if(random.nextInt(4) == 1){
-            return true;
-        }
-        return false;
+        return random.nextInt(4) == 1;
     }
 
     @Override

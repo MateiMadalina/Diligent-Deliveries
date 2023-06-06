@@ -13,9 +13,6 @@ public class Report {
         return sucessfulDeliveries;
     }
 
-    public int getReattempts() {
-        return reattempts;
-    }
 
     public String toString() {
         return  " delivered " + sucessfulDeliveries +
