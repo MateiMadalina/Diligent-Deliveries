@@ -1,6 +1,7 @@
 package com.codecool.diligentdeliveries;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Parcel {
     private final int[] id;
@@ -20,7 +21,11 @@ public class Parcel {
     }
 
     public boolean succesfulDeliver(){
-        return true;
+        Random random = new Random();
+        if(random.nextInt(4) == 1){
+            return true;
+        }
+        return false;
     }
 
     @Override

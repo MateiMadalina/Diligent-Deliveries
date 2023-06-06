@@ -39,14 +39,45 @@ public class Application {
         int maximumReattempts = 5;
 
         Rider rider0 = new Rider(0, 1, maximumReattempts);
-        Rider rider1 = new Rider(0, 5, maximumReattempts);
-        Rider rider2 = new Rider(0, 3, maximumReattempts);
+        Rider rider1 = new Rider(1, 5, maximumReattempts);
+        Rider rider2 = new Rider(2, 3, maximumReattempts);
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println(generateParcels());
+        ArrayList<Parcel> parcels = generateParcels();
+
+        rider0.startRoutine(generateParcels());
+        rider1.startRoutine(generateParcels());
+        rider2.startRoutine(generateParcels());
+
+        Report report0 = rider0.getReport();
+        Report report1 = rider1.getReport();
+        Report report2 = rider2.getReport();
+
+        System.out.println("Rider0 " + report0.toString());
+        System.out.println("Rider1 " + report1.toString());
+        System.out.println("Rider2 " + report2.toString());
+
+        // Determinarea câștigătorului
+        int maxDeliveries = Math.max(report0.getSucessfulDeliveries(), Math.max(report1.getSucessfulDeliveries(), report2.getSucessfulDeliveries()));
+        ArrayList<String> winners = new ArrayList<>();
+
+        if (report0.getSucessfulDeliveries() == maxDeliveries) {
+            winners.add("Rider0");
+        }
+        if (report1.getSucessfulDeliveries() == maxDeliveries) {
+            winners.add("Rider1");
+        }
+        if (report2.getSucessfulDeliveries() == maxDeliveries) {
+            winners.add("Rider2");
         }
 
-
-
+        if (winners.size() == 1) {
+            System.out.println("The winner is " + winners.get(0).toString());
+        } else {
+            System.out.println("It's a tie between the following riders:");
+            for (String winner : winners) {
+                System.out.println(winner.toString());
+            }
+        }
     }
-}
+    }
+

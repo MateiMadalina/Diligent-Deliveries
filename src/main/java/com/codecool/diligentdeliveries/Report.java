@@ -17,5 +17,9 @@ public class Report {
         return reattempts;
     }
 
-
+    public String toString() {
+        return  " delivered " + sucessfulDeliveries +
+                "packages out of 10(" + reattempts +
+                " reattempts left)";
+    }
 }
